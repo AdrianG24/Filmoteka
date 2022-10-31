@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,25 +11,46 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./sass/index.scss" />
 </head>
+
 <body>
-    <header class="header">
+    <header class="header section">
         <div class="container header__container">
+            <div class="header__content">
+                <div class="header__name">
+                    <img src="./sass/images/film.svg" alt="">
+                    <h1 class="filmoteka ">Filmoteka</h1>
+                </div>
+                <div class="header__options">
+                    <a href="./index.html" class="home current">HOME</a>
+                    <a href="./library.html" class="library ">MY LIBRARY</a>
+                </div>
+            </div>
+
             <form class="search-form" id="search-form">
-                <input class="search-form__input" type="text" name="searchQuery" autocomplete="off"
-                placeholder="Search images..." />
+                <input class="search-form__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" />
                 <button class="button search-form__button" type="submit"></button>
             </form>
+
         </div>
     </header>
-    
-    <main class="main">
-        
+
+    <main class="main section">
+
         <div class="gallery">
-  <!-- Картки зображень -->
+            <!-- Картки зображень -->
         </div>
 
     </main>
 
     <script type="module" src="./index.js"></script>
 </body>
+<footer class="footer section">
+</footer>
+
 </html>
+
+
+<!-- <form class="search-form" id="search-form">
+    <input class="search-form__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" />
+    <button class="button search-form__button" type="submit"></button>
+</form> -->

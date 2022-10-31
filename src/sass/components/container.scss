@@ -1,6 +1,42 @@
+$mobile-break-point: 320px;
+$tablet-break-point: 768px;
+$desktop-break-point: 1200px;
+
+@mixin mobile {
+    @media screen and (min-width: $mobile-break-point) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-break-point) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-break-point) {
+        @content;
+    }
+}
+
 .container {
-    max-width: 1200px;
     width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
     margin: 0 auto;
-    padding: 0 15px;
+
+    @include tablet {
+        max-width: $tablet-break-point;
+    }
+
+    @include desktop {
+        max-width: $desktop-break-point;
+    }
+}
+
+.section {
+    // padding-top: 20px;
+    // padding-bottom: 40px;
+    margin: 0 auto;
 }
