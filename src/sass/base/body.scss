@@ -1,0 +1,19 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+    font-family: 'Roboto',
+        sans-serif;
+    color: black;
+    min-width: 320px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
