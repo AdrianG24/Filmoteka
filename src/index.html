@@ -26,31 +26,36 @@
                 </div>
             </div>
 
-            <form class="search-form" id="search-form">
+            <div class="search-form" id="search-form">
                 <input class="search-form__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" />
                 <button class="button search-form__button" type="submit"></button>
-            </form>
-
+            </div>
         </div>
     </header>
 
-    <main class="main section">
+    <main class="main section" id="main">
 
-        <div class="gallery">
-            <!-- Картки зображень -->
+        <div class="movies-container watched-container queue-container">
+            <div class="movies-grid">
+                <!-- <div class="card" data-id="12345">
+                    <div class="img">
+                        <img src="./sass/images/test.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <h2 class="movie-name">MOVIE NAME</h2>
+                            <div class="single-info">
+                                <span>Drama, Action</span> <span>&#124;</span> <span>2020</span> <span>Rating: 10.0</span>
+                            </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
 
     </main>
-
+    <script src="./script.js"></script>
     <script type="module" src="./index.js"></script>
 </body>
 <footer class="footer section">
 </footer>
 
 </html>
-
-
-<!-- <form class="search-form" id="search-form">
-    <input class="search-form__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" />
-    <button class="button search-form__button" type="submit"></button>
-</form> -->
