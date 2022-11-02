@@ -27,7 +27,6 @@ function displayMovies(movies) {
     const movieElement = document.createElement('div');
     movieElement.classList.add('card');
     movieElement.innerHTML = `
-    
         <div class="img">
             <img src="${IMAGE_PATH + poster_path}">
         </div>
@@ -37,7 +36,6 @@ function displayMovies(movies) {
                     <span>${genre_ids}</span> <span>&#124;</span> <span>${first_air_date}</span><span>Rating: ${vote_average}</span>
                 </div>
         </div>
-      
     `;
     mainGrid.appendChild(movieElement);
   });
