@@ -8,39 +8,63 @@ const form = document.querySelector('form');
 const input = document.querySelector('.search-form input');
 const searchBtn = document.querySelector('.search-form button');
 const mainGrid = document.querySelector('.movies-grid');
+const modalContainer = document.querySelector('.modal-container');
 
-showMovies(API_URL);
-function showMovies(url) {
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.results);
-      displayMovies(data.results);
-    });
+getTrendingMovies();
+async function getTrendingMovies() {
+  const resp = await fetch(
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=${KEY_API}`
+  );
+  const respData = await resp.json();
+  console.log('Get Movies', respData.results);
+  return respData.results;
 }
 
-function displayMovies(movies) {
-  mainGrid.innerHTML = '';
-  movies.forEach(movie => {
-    const { name, poster_path, vote_average, first_air_date, genre_ids } =
-      movie;
-    const movieElement = document.createElement('div');
-    movieElement.classList.add('card');
-    movieElement.innerHTML = `
+getGenres();
+async function getGenres() {
+  const resp = await fetch(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY_API}`
+  );
+  const respData = await resp.json();
+  console.log('Get Genres', respData);
+  // return respData;
+}
+
+showTrending();
+async function showTrending() {
+  const data = await getTrendingMovies();
+
+  mainGrid.innerHTML = data
+    .slice(0, 18)
+    .map(e => {
+      return `
+            <div class="card" id="${e.id}">
         <div class="img">
-            <img src="${IMAGE_PATH + poster_path}">
+            <img src="${IMAGE_PATH + e.poster_path}">
         </div>
         <div class="info">
-            <h2 class="movie-name">${name}</h2>
+            <h2 class="movie-name">${e.title}</h2>
                 <div class="single-info">
-                    <span>${genre_ids}</span> <span>&#124;</span> <span>${first_air_date}</span><span>Rating: ${vote_average}</span>
+                    <span>${getGenres(
+                      e.genre_ids
+                    )}</span> <span class = "info-span">&#124;</span><span >${Number.parseInt(
+        e.release_date
+      )}</span><span class = release-rating> ${e.vote_average}</span>
                 </div>
         </div>
-    `;
-    mainGrid.appendChild(movieElement);
+    </div>
+      `;
+    })
+    .join('');
+
+  const cards = document.getElementsByClassName('card');
+  [...cards].forEach(card => {
+    const movieData = data.find(e => e.id.toString() === card.id.toString());
+    card.addEventListener('click', () => showModal(movieData));
   });
 }
 
+// SEARCH MOVIE
 async function searchMovie(searchWord) {
   const resp = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${KEY_API}&query=${searchWord}
@@ -53,25 +77,127 @@ async function searchMovie(searchWord) {
 searchBtn.addEventListener('click', searchedMovies);
 async function searchedMovies() {
   const data = await searchMovie(input.value);
-  console.log(data);
 
   mainGrid.innerHTML = data
     .map(e => {
       return `
-    <div class="card" data-id="${e.id.value}">
+    <div class="card" id="${e.id}">
         <div class="img">
             <img src="${IMAGE_PATH + e.poster_path}">
         </div>
         <div class="info">
             <h2 class="movie-name">${e.title}</h2>
                 <div class="single-info">
-                    <span>${e.genre_ids}</span> <span>&#124;</span> <span>${
+                    <span>${
+                      e.genre_ids
+                    }</span> <span>&#124;</span> <span>${Number.parseInt(
         e.release_date
-      }</span><span>Rating: ${e.vote_average}</span>
+      )}</span><span>Rating: ${e.vote_average}</span>
                 </div>
         </div>
     </div>
       `;
     })
     .join('');
+
+  const cards = document.getElementsByClassName('card');
+  // console.log('рендер пошуку', cards);
+  [...cards].forEach(card => {
+    const movieData = data.find(e => e.id.toString() === card.id.toString());
+    card.addEventListener('click', () => showModal(movieData));
+  });
+}
+
+// MODAL
+async function getMovieTrailer(movieId) {
+  const resp = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${KEY_API}`
+  );
+  const respData = await resp.json();
+  return respData.results[0].key;
+}
+
+async function showModal(movieData) {
+  const movieTrailer = await getMovieTrailer(movieData.id);
+  // console.log(movieTrailer);
+  modalContainer.classList.add('show-modal-container');
+  modalContainer.style.background = `linear-gradient(#9d5727, #00000073),
+        url(${IMAGE_PATH + movieData.poster_path})`;
+  modalContainer.innerHTML = `<span class="modal-x">&#10006</span>
+        <div class="modal-content">
+            <div class="modal-left">
+                <div class="modal-poster-img">
+                    <img class="modal-img" src="${
+                      IMAGE_PATH + movieData.poster_path
+                    }" alt="">
+                </div>
+            </div>
+            <div class="modal-right">
+                <h2 class="modal-movie-name" id="modal-movie-name">${
+                  movieData.title
+                }</h2>
+                <div class="modal-poster-info">
+                  <div class="modal-box">
+                    <h4 class="modal-vote grey-style">Vote <span class="modal-vote-span grey-style">/</span> Votes</h4>
+                    <p class="modal-rating"> ${
+                      movieData.vote_average
+                    } </p><span class="modal-rating-span black-style">/</span><p class="black-style">${
+    movieData.vote_count
+  }</p></div>
+                <div class="modal-box">
+                    <h4 class="modal-popularity grey-style">Popularity</h4>
+                    <p class="modal-popularity-score black-style">${
+                      movieData.popularity
+                    }</p>
+                    </div>
+                    <div class="modal-box">
+                    <h4 class="modal-title grey-style">Original Title</h4>
+                    <p class="modal-title-name black-style">${
+                      movieData.title
+                    }</p>
+                    </div>
+                    <div class="modal-box">
+                    <h4 class="modal-genre grey-style">Genre</h4>
+                    <p class="modal-genre-id black-style">${
+                      movieData.genre_ids
+                    }</p>
+                    </div>
+                    <h3 class="modal-about">About</h3>
+                    <p class="modal-about-text">${movieData.overview}</p>
+                    <div class="buttons">
+                      <button class="queue">ADD TO QUEUE</button>
+                      <button class="watched">ADD TO WATCHED</button>
+                    </div>
+                </div>
+                <div class="trailer">
+                    <h2 class="trail">Trailer</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/${movieTrailer}" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></ifr>
+                </div>
+            </div>
+        </div>`;
+
+  const xIcon = document.querySelector('.modal-x');
+  xIcon.addEventListener('click', () =>
+    modalContainer.classList.remove('show-modal-container')
+  );
+
+  const watched = document.querySelector('.watched');
+  watched.addEventListener('click', () => {
+    if (watched.classList.contains('hover')) {
+      watched.classList.remove('hover');
+    } else {
+      watched.classList.add('hover');
+    }
+  });
+
+  const queue = document.querySelector('.queue');
+  queue.addEventListener('click', () => {
+    if (queue.classList.contains('hover')) {
+      queue.classList.remove('hover');
+    } else {
+      queue.classList.add('hover');
+    }
+  });
 }

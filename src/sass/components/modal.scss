@@ -1,0 +1,157 @@
+.modal-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // background-image:linear-gradient(#9d5727, #00000073),
+    //     url(https://unsplash.it/1600/900);
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 8px 8px 40px 12px;
+    overflow-y: scroll;
+
+    transform: scale(0);
+    transition: 250ms ease-in-out transform;
+}
+.modal-content {
+    display: flex;
+    align-items: flex-start;
+    width: 1200px;
+    margin-top: 10rem;
+}
+.modal-poster-img {
+    width: 376px;
+        height: 600px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 4px solid rgba(255, 107, 1, 1);
+    box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+}
+.modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trailer iframe{
+    border: 4px solid rgba(255, 107, 1, 1);
+    box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    height: 215px;
+}
+
+.modal-x {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 100px;
+    right: 100px;
+    cursor: pointer;
+}
+.modal-x:hover {
+    transform: scale(1.3);
+}
+.modal-x:active {
+    transform: scale(1);
+}
+
+.show-modal-container {
+    transform: scale(1);
+}
+
+.modal-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-movie-name {
+    font-size: 30px;
+    line-height: 35px;
+    color: white;
+}
+
+.grey-style{
+    font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+color: rgba(255, 107, 1, 1);
+margin-right: auto;
+margin-bottom: 8px;
+}
+
+.modal-right {
+    padding: 0px 190px;
+}
+
+.black-style {
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.modal-rating {
+    width: 36px;
+    height: 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 107, 1, 1);
+    border-radius: 5px;
+}
+
+.modal-about {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 12px;
+line-height: 16px;
+text-transform: uppercase;
+color: white;
+}
+.modal-about-text {
+    color: white;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.trailer {
+margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: white;
+}
+.trail {
+    margin-bottom: 20px;
+}
+
+.info-span {
+    margin-right: 9px;
+    margin-left: 9px;
+}
+
+.release-rating {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 107, 1, 1);
+    border-radius: 5px;
+    margin-left: 11px;
+}

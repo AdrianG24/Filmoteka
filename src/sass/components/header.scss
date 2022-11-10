@@ -107,6 +107,50 @@ line-height: 14px;
         width: 148px;
     }
 
+}
+
+.hover {
+    background-color: rgba(255, 107, 1, 1);
+    border: transparent;
+    box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.watched {
+    margin-right: 20px;
+    @include tablet {
+        margin-right: 32px;
+    }
+    @include desktop {
+        margin-right: 16px;
+    }
+}
+
+.modal-watched,
+.modal-queue {
+    height: 44px;
+    width: 129px;
+    left: 170px;
+    top: 124px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+
+    @include tablet {
+        height: 44px;
+        width: 152px;
+    }
+
+    @include desktop {
+        height: 42px;
+        width: 148px;
+    }
+
     &:hover,
     &:focus {
         background-color: rgba(255, 107, 1, 1);
@@ -115,15 +159,18 @@ line-height: 14px;
     }
 }
 
-.buttons {
+.modal-buttons {
     display: flex;
     justify-content: center;
 }
-.watched {
+
+.modal-watched {
     margin-right: 20px;
+
     @include tablet {
         margin-right: 32px;
     }
+
     @include desktop {
         margin-right: 16px;
     }
