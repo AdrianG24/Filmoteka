@@ -1,0 +1,52 @@
+.pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.pagination-btn{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.start-page-btn {
+    background-image: url(./images/d-arrow-left.svg);
+    background-size: 23px 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.previous-page-btn {
+    background: url(./images/arrow-left.svg) no-repeat;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+}
+.next-page-btn{
+    background: url(./images/arrow-right.svg) no-repeat;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+}
+.end-page-btn {
+    background-image: url(./images/d-arrow-right.svg);
+    background-size: 23px 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.pagination-container button.active{
+    background-color: rgba(255, 107, 8, 1);
+    color: white;
+}
+.pagination-btn:hover {
+    background-color: rgba(255, 107, 8, 1);
+    color: white;
+}
