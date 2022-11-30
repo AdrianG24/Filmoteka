@@ -6,6 +6,8 @@
     max-width: 280px;
     @include desktop {
         width: calc((100%/3) - 16px);
+        min-height: 574px;
+        min-width: 395px;
     }
 }
 .card:hover,
@@ -26,6 +28,9 @@
     position: relative;
     overflow: hidden;
     height: 398px;
+    @include desktop {
+        min-height: 664px;
+    }
 }
 .img img{
     position: absolute;

@@ -77,7 +77,7 @@
 79C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\terser\lib\utils\index.js133088320654285435 0
 76C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\lodash\forEachRight.js133090252874647306 0
 71C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\nan\nan_private.h133088320636872695 0
-45C:\Users\dell\Desktop\Projects\Filmoteka\dist133142789686503692 1
+45C:\Users\dell\Desktop\Projects\Filmoteka\dist133142802058588004 1
 85C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\caniuse-lite\data\regions\BA.js133088320660409231 0
 100C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\caniuse-lite\data\features\intl-pluralrules.js133088320697293979 0
 80C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\v8-compile-cache\README.md133088320619853325 0
@@ -96,7 +96,7 @@
 68C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\ordered-binary133116809516025096 1
 62C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\boolbase133116809319507270 1
 92C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\@parcel\core\test\fixtures\module-a.js133088320672894665 0
-71C:\Users\dell\Desktop\Projects\Filmoteka\src\sass\components\modal.scss133142789682988761 0
+71C:\Users\dell\Desktop\Projects\Filmoteka\src\sass\components\modal.scss133142802053544548 0
 75C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\utility-types\LICENSE133088320610605834 0
 92C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\notiflix\build\notiflix-block-aio.d.ts133098984548262353 0
 86C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\nth-check\lib\esm\parse.d.ts.map133088320637063193 0
@@ -360,7 +360,7 @@
 75C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\resolve-from\index.js133088320613472507 0
 69C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\yaml\index.d.ts133088320663936372 0
 84C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\lmdb-win32-x64\node.abi93.node133088320647468236 0
-77C:\Users\dell\Desktop\Projects\Filmoteka\src\sass\components\movies-grid.scss133142750848159259 0
+77C:\Users\dell\Desktop\Projects\Filmoteka\src\sass\components\movies-grid.scss133142799218116546 0
 86C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\source-map-js\lib\source-node.js133088320631980165 0
 85C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\caniuse-lite\data\regions\FK.js133088320690913416 0
 80C:\Users\dell\Desktop\Projects\Filmoteka\node_modules\source-map-js\package.json133088320634490358 0
@@ -6419,8 +6419,8 @@
 68C:\Users\dell\Desktop\Projects\Filmoteka\dist\bg-mobile.181d4ba4.jpg133142746473652804 0
 68C:\Users\dell\Desktop\Projects\Filmoteka\dist\bg-tablet.f997f05b.jpg133142746473652804 0
 71C:\Users\dell\Desktop\Projects\Filmoteka\dist\d-arrow-left.98053f54.svg133142746472266547 0
-64C:\Users\dell\Desktop\Projects\Filmoteka\dist\index.b07a87f3.css133142789686403429 0
-68C:\Users\dell\Desktop\Projects\Filmoteka\dist\index.b07a87f3.css.map133142789686423482 0
+64C:\Users\dell\Desktop\Projects\Filmoteka\dist\index.b07a87f3.css133142802058397465 0
+68C:\Users\dell\Desktop\Projects\Filmoteka\dist\index.b07a87f3.css.map133142802058397465 0
 65C:\Users\dell\Desktop\Projects\Filmoteka\dist\library.975ef6c8.js133142746473652804 0
 73C:\Users\dell\Desktop\Projects\Filmoteka\assets\actions-config-step-2.png133088312253939293 0
 69C:\Users\dell\Desktop\Projects\Filmoteka\.github\workflows\deploy.yml133088312253788881 0

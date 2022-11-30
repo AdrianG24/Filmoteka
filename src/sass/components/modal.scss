@@ -115,9 +115,10 @@ margin-bottom: 8px;
 
 .modal-right {
     height: auto;
-    max-width: 240px;
+    min-width: 240px;
     @include desktop {
         padding: 0px 190px;
+        min-width: 391px;
     }
 }
 
