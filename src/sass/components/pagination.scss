@@ -3,44 +3,64 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
+    padding-bottom: 20px;
 }
 
 .pagination-btn{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: none;
     border: none;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 16px;
     cursor: pointer;
-    padding: 0 10px;
     border-radius: 5px;
+    @include desktop {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    padding: 0 10px;
+}
 }
 
 .start-page-btn {
     background-image: url(./images/d-arrow-left.svg);
-    background-size: 23px 26px;
+    background-size: 19px 22px;
     background-repeat: no-repeat;
     background-position: center;
+    @include desktop {
+        background-size: 23px 26px;
+    }
 }
 
 .previous-page-btn {
     background: url(./images/arrow-left.svg) no-repeat;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    @include desktop {
     width: 40px;
     height: 40px;
-    background-position: center;
+    }
 }
 .next-page-btn{
     background: url(./images/arrow-right.svg) no-repeat;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    @include desktop {
     width: 40px;
     height: 40px;
-    background-position: center;
+    }
 }
 .end-page-btn {
     background-image: url(./images/d-arrow-right.svg);
-    background-size: 23px 26px;
+    background-size: 19px 22px;
     background-repeat: no-repeat;
     background-position: center;
+    @include desktop {
+        background-size: 23px 26px;
+    }
 }
 .pagination-container button.active{
     background-color: rgba(255, 107, 8, 1);

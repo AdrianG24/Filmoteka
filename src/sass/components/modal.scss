@@ -2,8 +2,6 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    // background-image:linear-gradient(#9d5727, #00000073),
-    //     url(https://unsplash.it/1600/900);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,26 +9,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     color: white;
-    padding: 8px 8px 40px 12px;
     overflow-y: scroll;
-
     transform: scale(0);
     transition: 250ms ease-in-out transform;
+    @include desktop {
+        padding: 8px 8px 40px 12px;
+        flex-wrap: nowrap;
+    }
 }
 .modal-content {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 1200px;
-    margin-top: 10rem;
+    padding: 48px 20px 40px;
+    @include desktop {
+        flex-wrap: nowrap;
+        margin-top: 10rem;
+    }
 }
 .modal-poster-img {
-    width: 376px;
-        height: 600px;
     overflow: hidden;
     border-radius: 5px;
-    border: 4px solid rgba(255, 107, 1, 1);
+    border: 2px solid rgba(255, 107, 1, 1);
     box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+    width: 240px;
+    height: 357px;
+    @include desktop {
+    border: 4px;
+    width: 376px;
+    height: 600px;
+}
 }
 .modal-img {
     width: 100%;
@@ -44,16 +56,22 @@
     border-radius: 5px;
     max-width: 400px;
     width: 100%;
-    height: 215px;
+    height: 100%;
+    min-height: 190px;
+    // height: 215px;
 }
 
 .modal-x {
     position: absolute;
     width: 14px;
     height: 14px;
+    top: 8;
+    right: 8;
+    cursor: pointer;
+    @include desktop {
     top: 100px;
     right: 100px;
-    cursor: pointer;
+    }
 }
 .modal-x:hover {
     transform: scale(1.3);
@@ -72,44 +90,64 @@
 }
 
 .modal-movie-name {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 20px;
+    @include desktop {
     font-size: 30px;
     line-height: 35px;
     color: white;
-    margin-bottom: 20px;
+    }
+    
 }
 
 .grey-style{
 font-weight: 500;
 font-size: 12px;
-line-height: 16px;
+line-height: 14px;
 color: rgba(255, 107, 1, 1);
 margin-right: auto;
 margin-bottom: 8px;
+@include desktop {
+    line-height: 16px;
+}
 }
 
 .modal-right {
-    padding: 0px 190px;
+    height: auto;
+    max-width: 240px;
+    @include desktop {
+        padding: 0px 190px;
+    }
 }
 
 .black-style {
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 8px;  
+    text-align: right;
+    @include desktop {
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
     color: white;
-    margin-bottom: 8px;
+    margin-bottom: 8px;   
+    }
 }
 
 .modal-rating {
-    width: 36px;
-    height: 16px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    font-size: 12px;
-    line-height: 16px;
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(255, 107, 1, 1);
+width: 26px;
+    height: 11px;
+    color: #fff;
+    background-color: #ff6b01;
     border-radius: 5px;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 10px;
+    line-height: 10px;
+    display: flex;
 }
 
 .modal-about {
@@ -123,32 +161,42 @@ color: white;
 .modal-about-text {
     color: white;
     font-size: 12px;
-    line-height: 16px;
+    line-height: 20px;
     margin-bottom: 20px;
+    @include desktop {
+        line-height: 16px;
+    }
 }
 
 .trailer {
-margin-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.trail {
     margin-bottom: 20px;
     font-size: 12px;
     line-height: 16px;
     text-transform: uppercase;
     color: white;
 }
-.trail {
-    margin-bottom: 20px;
-}
 
 .release-rating {
-    width: 40px;
-    height: 20px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    font-size: 13px;
-    line-height: 19px;
     color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 107, 1, 1);
     border-radius: 5px;
     margin-left: 11px;
+    font-size: 10px;
+    line-height: 14px;
+    width: 28px;
+    height: 14px;
+    @include desktop{
+    width: 40px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 19px;
+    margin-left: 11px;
+}
 }

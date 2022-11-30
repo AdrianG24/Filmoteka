@@ -89,7 +89,7 @@ line-height: 14px;
 .watched,
 .queue {
     height: 44px;
-    width: 129px;
+    min-width: 110px;
     left: 170px;
     top: 124px;
     border-radius: 5px;
@@ -97,18 +97,22 @@ line-height: 14px;
     background-color: transparent;
     color: rgba(255, 255, 255, 1);
     cursor: pointer;
-
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: auto;
     @include tablet {
         height: 44px;
-            width: 152px;
+        min-width: 152px;
     }
     @include desktop {
         height: 42px;
-        width: 148px;
+        min-width: 148px;
     }
 
 }
-
+.watched {
+    margin-left: 20px;
+}
 .hover {
     background-color: rgba(255, 107, 1, 1);
     border: transparent;
@@ -117,7 +121,7 @@ line-height: 14px;
 
 .buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .watched {
     margin-right: 20px;

@@ -97,7 +97,8 @@ function updateGrid(data) {
       return `
             <div class="card" id="${e.id}">
         <div class="img">
-            <img src="${IMAGE_PATH + e.poster_path}" loading="lazy">
+            <img src="
+            ${noImage(e.poster_path)}" loading="lazy">
         </div>
         <div class="info">
             <h2 class="movie-name">${e.title}</h2>
@@ -128,6 +129,14 @@ function createCardsModal(data) {
     const movieData = data.find(e => e.id.toString() === card.id.toString());
     card.addEventListener('click', () => showModal(movieData));
   });
+}
+
+function noImage(pic) {
+  if (pic === null) {
+    return 'https://billuchi.com/wp-content/themes/barberry/images/placeholder.jpg';
+  } else {
+    return `https://image.tmdb.org/t/p/w1280${pic}`;
+  }
 }
 // SEARCH MOVIE
 async function searchMovie(searchWord) {
